@@ -2,7 +2,14 @@ import React from 'react';
 import { Camera, Upload, Cpu, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 
-const steps = [
+interface Step {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  color: string;
+}
+
+const steps: Step[] = [
 {
   icon: Camera,
   title: "Capture RGB",
@@ -28,7 +35,12 @@ const steps = [
   color: "text-lime-400"
 }];
 
-const Step = ({ step, index }) => {
+interface StepProps {
+  step: Step;
+  index: number;
+}
+
+const Step = ({ step, index }: StepProps) => {
   const isRightSide = index % 2 !== 0;
 
   const content = (
