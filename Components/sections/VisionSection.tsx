@@ -1,7 +1,14 @@
 import React from 'react';
 import { motion } from "framer-motion";
 
-const VisionMetric = ({ number, label, description, delay }) => (
+interface VisionMetricProps {
+  number: string;
+  label: string;
+  description: string;
+  delay: number;
+}
+
+const VisionMetric = ({ number, label, description, delay }: VisionMetricProps) => (
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
