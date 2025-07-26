@@ -3,14 +3,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../Components/ui/ca
 import { AlertTriangle, CheckCircle, DollarSign, Camera, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 
-const ProblemItem = ({ icon: Icon, children }) => (
+interface ItemProps {
+  icon: React.ComponentType<{ className?: string }>;
+  children: React.ReactNode;
+}
+
+const ProblemItem = ({ icon: Icon, children }: ItemProps) => (
   <div className="flex items-start gap-3 text-slate-400">
     <Icon className="w-5 h-5 text-red-400/80 mt-1 flex-shrink-0" />
     <span>{children}</span>
   </div>
 );
 
-const SolutionItem = ({ icon: Icon, children }) => (
+const SolutionItem = ({ icon: Icon, children }: ItemProps) => (
   <div className="flex items-start gap-3 text-slate-300">
     <Icon className="w-5 h-5 text-lime-400/80 mt-1 flex-shrink-0" />
     <span>{children}</span>
