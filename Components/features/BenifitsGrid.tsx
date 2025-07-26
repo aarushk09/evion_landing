@@ -73,7 +73,7 @@ const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
           }}
         />
         <CardContent className="p-8 relative z-10">
-          <div className={`mb-6 w-12 h-12 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700`}>
+          <div className={`mb-6 w-12 h-12 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 mt-2.5`}>
             <benefit.icon className={`w-8 h-8 ${benefit.color} group-hover:scale-110 transition-transform duration-300`} />
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
