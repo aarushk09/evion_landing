@@ -64,12 +64,12 @@ const Step = ({ step, index }: StepProps) => {
 
       {/* Circle in the middle */}
       <motion.div
-        className="absolute left-1/2 -translate-x-1/2 z-10"
+        className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.5, type: 'spring', stiffness: 300, damping: 20, delay: 0.1 }}
       >
-        <div className="w-20 h-20 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center">
+        <div className="w-20 h-20 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center shadow-lg">
           <div className="w-16 h-16 rounded-full bg-slate-800/80 flex items-center justify-center">
             <step.icon className={`w-8 h-8 ${step.color}`} />
           </div>
@@ -114,9 +114,9 @@ export default function ProcessSteps() {
         <div className="relative max-w-4xl mx-auto">
           {/* The connecting line */}
           <motion.div
-            className="absolute left-1/2 transform -translate-x-1/2 top-10 bottom-10 w-0.5 bg-gradient-to-b from-transparent via-lime-500/50 to-transparent"
+            className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-lime-500/50 to-transparent z-0"
             initial={{ height: 0 }}
-            whileInView={{ height: 'calc(100% - 5rem)' }}
+            whileInView={{ height: '100%' }}
             transition={{ duration: 2, ease: "linear" }}
           />
 
