@@ -3,7 +3,14 @@ import { Card, CardContent } from "../../Components/ui/card";
 import { MapPin, DollarSign, AlertCircle, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 
-const benefits = [
+interface Benefit {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  color: string;
+}
+
+const benefits: Benefit[] = [
     {
       icon: MapPin,
       title: "Precision Health Mapping",
@@ -30,11 +37,16 @@ const benefits = [
     }
 ];
 
-const BenefitCard = ({ benefit, index }) => {
+interface BenefitCardProps {
+  benefit: Benefit;
+  index: number;
+}
+
+const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: "-50%", y: "-50%" });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       const x = e.clientX - rect.left;
